@@ -205,6 +205,12 @@ a {
   text-decoration: none;
   color: inherit; }
 
+.hidden {
+  display: none; }
+
+.grid {
+  display: grid; }
+
 .search {
   min-height: 100vh;
   max-width: 1600px;
@@ -425,7 +431,6 @@ button:hover {
   border: 2px solid #473547; }
 
 .profile-icon-stats {
-  display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
   -webkit-box-pack: center;
@@ -437,20 +442,18 @@ button:hover {
   padding: 50px 0 40px; }
 
 .profile-icon-stats img {
-  display: none;
   max-width: 100%; }
 
 .icon-container {
-  text-align: center;
-  display: none; }
+  text-align: center; }
 
 .icon-span {
+  display: inline-block;
   color: #eff7ff;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.8rem;
-  text-align: center;
-  display: none; }
+  text-align: center; }
 
 .school + .icon-span {
   overflow: hidden;
@@ -462,14 +465,12 @@ button:hover {
   margin: 0 auto; }
 
 .profile-text-stats h2 {
-  display: none;
   position: relative;
   bottom: -35px; }
 
 .text-container {
   grid-template-columns: minmax(215px, 215px) 1fr;
-  grid-gap: 10px;
-  display: none; }
+  grid-gap: 10px; }
 
 .profile-text-stats span {
   display: block;
@@ -488,9 +489,6 @@ button:hover {
   font-size: 2rem;
   text-transform: capitalize; }
 
-.divider {
-  display: none; }
-
 .divider-span {
   height: 10px;
   background: #473547; }
@@ -501,7 +499,6 @@ button:hover {
   padding: 20px; }
 
 .profile-quote-status {
-  display: none;
   grid-template-columns: 1fr 150px;
   grid-gap: 10px;
   padding: 0 0 30px 0;
@@ -533,7 +530,6 @@ button:hover {
   text-align: center; }
 
 .profile-friend-status {
-  display: grid;
   grid-template-columns: 150px 1fr;
   grid-gap: 10px;
   padding: 0 0 30px 0;
@@ -556,7 +552,7 @@ button:hover {
   text-align: center; }
 
 .profile-location-status {
-  display: none;
+  display: grid;
   grid-template-columns: 1fr 150px;
   grid-gap: 10px;
   padding: 0 0 30px 0;
@@ -567,7 +563,6 @@ button:hover {
   padding-left: 20px; }
 
 .profile-friends-list {
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
   grid-gap: 10px;
@@ -585,7 +580,6 @@ h2.friends {
   margin: 0 auto; }
 
 .friend {
-  display: grid;
   grid-template-rows: auto 1fr; }
 
 caption {

@@ -70,7 +70,6 @@ app.initiateSearch = function () {
     })
     // error handling
     .fail((err) => {
-        console.log(err);
     });
 }
 
@@ -187,19 +186,17 @@ app.hideProfile = function() {
 app.displayProfilePicture = function(name) {
     // convert character name string to name with hyphens
     const fileName = name.replace(/ /g, '-');
-    $(`.${fileName}-picture`).load(`assets/profile-pictures/${fileName}-static.png`, function (response, status, xhr) {
-        // if error, use default and add alt with character name
-        if (status == "error") {
-            $(this).attr('alt', name);
-            console.log(`error: ${name}`);
+    // update picture alt
+    $(`.${fileName}-picture`).attr('alt', name);
+    // check if unique profile picture exists
+    // loop through profile picture names
+    for (picture in app.profilePictures) {
+        // check if filename is the same as profile picture name
+        if (fileName === app.profilePictures[picture]) {
+            // update image source to unique image
+            $(`.${fileName}-picture`).attr('src', `assets/profile-pictures/${fileName}-static.png`);
         }
-        // if it does, use URL and add alt with character name
-        else {
-            $(this).attr('src', `assets/profile-pictures/${fileName}-static.png`);
-            $(this).attr('alt', name);
-            console.log(`no error: ${name}`);
-        }
-    });
+    }
 }
 
 // smooth-scroll
@@ -208,7 +205,7 @@ app.animateScroll = function (htmlID) {
     $(htmlID).css('min-height', '100vh');
     $('html, body').animate({
         scrollTop: $(htmlID).offset().top
-    }, 800);
+    });
 }
 
 $(function () {
